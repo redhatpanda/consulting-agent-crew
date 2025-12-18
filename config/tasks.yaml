@@ -1,0 +1,460 @@
+# ============================================================================
+# PHASE 0: ENGAGEMENT FRAMING
+# ============================================================================
+
+phase_0_engagement_framing_task:
+  description: >
+    As the Engagement Manager, frame the strategic consulting engagement for {client_company}
+    regarding {strategic_objective} in the {target_market} market.
+    
+    This is Phase 0 - Engagement Framing. Your goal is to establish clarity before any analysis begins.
+    
+    You must deliver:
+    - Clear problem statement (not symptoms, but root causes)
+    - Success metrics (how will we know we've succeeded?)
+    - Key hypotheses (2-4 testable hypotheses, NOT solutions)
+    - Explicit unknowns (what we don't know yet and need to discover)
+    - Initial problem structuring (hypothesis tree or issue tree)
+    
+    CRITICAL: Frame hypotheses as testable statements. Examples:
+    - "Growth is constrained by channel inefficiency, not demand"
+    - "Market share loss is due to product gaps, not pricing"
+    - "Profitability issues stem from operational inefficiency, not revenue decline"
+    
+    Start by reviewing company knowledge base documents for internal context, strategic priorities,
+    and organizational constraints. When you need to understand industry standards or market
+    dynamics to frame hypotheses properly, use web search to ensure hypotheses are grounded in
+    market reality.
+    
+    GATE CRITERIA: Proceed only if hypotheses are specific, testable, and not vague. If hypotheses
+    are too broad or solution-oriented, reframe them.
+  expected_output: >
+    An Engagement Framing Document with clear problem statement, success metrics, testable
+    hypotheses (2-4), explicit unknowns, and initial problem structure. Formatted as professional
+    markdown. This document sets the foundation for all hypothesis-driven work.
+  agent: project_orchestration_agent
+
+# ============================================================================
+# PHASE 1: HYPOTHESIS-DRIVEN DISCOVERY (PARALLEL WORK)
+# ============================================================================
+
+phase_1_research_intelligence_task:
+  description: >
+    Conduct hypothesis-driven research and intelligence gathering for {client_company}'s strategic
+    initiative to {strategic_objective} in the {target_market} market.
+    
+    This is Phase 1 - Hypothesis-Driven Discovery. Your work must be mapped to the hypotheses
+    established in Phase 0.
+    
+    CRITICAL REQUIREMENT: For every finding, you must tag it as:
+    - SUPPORTS hypothesis (evidence strengthens the hypothesis)
+    - WEAKENS hypothesis (evidence contradicts or undermines the hypothesis)
+    - INCONCLUSIVE (evidence is neutral or insufficient)
+    
+    Your research must include:
+    - Industry reports and market analysis (TAM, SAM, SOM with growth projections)
+    - Competitive landscape mapping (key players, market share, positioning, competitive moats)
+    - Financial analysis of competitors and comparable companies
+    - Market trends and industry dynamics
+    - PESTEL analysis (Political, Economic, Social, Technological, Environmental, Legal factors)
+    - Regulatory changes and macroeconomic factors affecting the market
+    - Precedent transactions and M&A activity
+    - Industry benchmarks and best practices
+    - Customer segments and buying behavior analysis
+    
+    For each hypothesis, explicitly state:
+    1. What evidence supports it
+    2. What evidence weakens it
+    3. What remains unknown
+    
+    Start by checking company knowledge base documents for internal context. When company documents
+    don't provide sufficient context or current market data, use web search to supplement your research.
+    
+    Maintain analytical rigor and cite sources. Ensure all information is current for {current_year}.
+  expected_output: >
+    A Hypothesis-Driven Research & Intelligence Report with executive summary, detailed market
+    analysis mapped to hypotheses, evidence tagging (supports/weakens/inconclusive), competitive
+    landscape, PESTEL analysis, and key insights. Include data tables, market maps, and explicit
+    hypothesis validation. Formatted as professional markdown suitable for consulting deliverables.
+  agent: research_intelligence_agent
+  context: [phase_0_engagement_framing_task]
+
+phase_1_data_analysis_task:
+  description: >
+    Perform hypothesis-driven quantitative analysis on {client_company}'s data to support the
+    strategic engagement regarding {strategic_objective}.
+    
+    This is Phase 1 - Hypothesis-Driven Discovery. Your analysis must test the hypotheses
+    established in Phase 0.
+    
+    CRITICAL REQUIREMENT: For every analytical finding, you must tag it as:
+    - SUPPORTS hypothesis (data strengthens the hypothesis)
+    - WEAKENS hypothesis (data contradicts or undermines the hypothesis)
+    - INCONCLUSIVE (data is neutral or insufficient)
+    
+    Your analysis must include:
+    - Financial statement analysis (revenue trends, profitability, cash flow, balance sheet)
+    - Operational metrics and KPIs analysis
+    - Customer data analysis (segmentation, lifetime value, churn, acquisition costs)
+    - Financial modeling and forecasting (3-5 year projections)
+    - Scenario analysis (base case, optimistic, pessimistic)
+    - Statistical analysis and regression modeling where applicable
+    - Benchmarking against industry standards
+    - Data visualizations and dashboard summaries
+    
+    For each hypothesis, explicitly state:
+    1. What quantitative evidence supports it
+    2. What quantitative evidence weakens it
+    3. What data gaps prevent validation
+    
+    First check company knowledge base documents for internal financial data. When you need
+    industry benchmarks or market comparables, use web search to find current industry standards
+    and financial metrics for comparable companies.
+    
+    Build robust financial models that can support strategic decision-making. Ensure all
+    assumptions are clearly stated and models are flexible for sensitivity analysis.
+  expected_output: >
+    A Hypothesis-Driven Data Analysis & Financial Modeling Report with executive summary, detailed
+    quantitative analysis mapped to hypotheses, evidence tagging (supports/weakens/inconclusive),
+    financial models, scenario analyses, and key insights. Include data visualizations descriptions,
+    tables, and clear explanations of methodologies. Formatted as professional markdown with
+    supporting appendices.
+  agent: data_analysis_agent
+  context: [phase_0_engagement_framing_task]
+
+phase_1_interview_synthesis_task:
+  description: >
+    Structure and synthesize stakeholder interviews and qualitative research for {client_company}'s
+    strategic engagement regarding {strategic_objective}.
+    
+    This is Phase 1 - Hypothesis-Driven Discovery. Your qualitative work must test the hypotheses
+    established in Phase 0.
+    
+    CRITICAL REQUIREMENT: For every qualitative finding, you must tag it as:
+    - SUPPORTS hypothesis (qualitative evidence strengthens the hypothesis)
+    - WEAKENS hypothesis (qualitative evidence contradicts or undermines the hypothesis)
+    - INCONCLUSIVE (qualitative evidence is neutral or insufficient)
+    
+    Your work must include:
+    - Stakeholder interview guide design (for C-suite, middle management, operational teams)
+    - Analysis of interview themes and insights mapped to hypotheses
+    - Sentiment analysis of organizational perspectives
+    - Identification of organizational pain points and opportunities
+    - Cultural and change readiness assessment
+    - Synthesis of qualitative findings into actionable insights
+    
+    For each hypothesis, explicitly state:
+    1. What qualitative evidence supports it
+    2. What qualitative evidence weakens it
+    3. What organizational factors remain unclear
+    
+    Rely on company documents for organizational context. When you need best practices or industry
+    benchmarks for organizational structures, use web search to enhance your qualitative analysis.
+    
+    Ensure qualitative insights complement and enrich the quantitative analysis. Identify
+    organizational realities that must be considered in strategic recommendations.
+  expected_output: >
+    A Hypothesis-Driven Interview & Synthesis Report with executive summary, interview findings
+    mapped to hypotheses, evidence tagging (supports/weakens/inconclusive), thematic analysis,
+    sentiment insights, organizational assessment, and key qualitative insights. Include quotes
+    and examples where appropriate. Formatted as professional markdown.
+  agent: interview_synthesis_agent
+  context: [phase_0_engagement_framing_task]
+
+# ============================================================================
+# PHASE 2: SYNTHESIS & PUSHBACK (CRITICAL GATE)
+# ============================================================================
+
+phase_2_synthesis_pushback_task:
+  description: >
+    Synthesize all Phase 1 evidence and conduct rigorous pushback on hypotheses for {client_company}'s
+    strategic engagement regarding {strategic_objective} in the {target_market} market.
+    
+    This is Phase 2 - Synthesis & Pushback. This is a CRITICAL QUALITY GATE.
+    
+    You must answer:
+    1. Which hypotheses survived the evidence? (strong support, minimal weakening)
+    2. Which hypotheses were disproven? (strong weakening evidence)
+    3. What new hypotheses emerged from the evidence? (unexpected findings)
+    4. What assumptions remain unvalidated? (gaps that need addressing)
+    
+    Your synthesis must include:
+    - Evidence synthesis across all Phase 1 work (research, data, interviews)
+    - Hypothesis validation matrix (each hypothesis scored on support/weakening evidence)
+    - Refined problem framing (update based on what we learned)
+    - Shortlist of strategic options (2-4 maximum, not more)
+    - Explicit trade-offs between options
+    - Identification of critical unknowns that could change recommendations
+    
+    Apply strategic frameworks to structure the problem:
+    - Porter's Five Forces analysis
+    - SWOT analysis
+    - Value Chain Analysis
+    - Capability assessment and gap analysis
+    - Strategic positioning analysis
+    
+    Start with company knowledge base documents for strategic context. When you need current market
+    dynamics or competitive intelligence, use web search to gather external intelligence.
+    
+    GATE CRITERIA: 
+    - If evidence is weak or inconclusive → recommend looping back to Phase 1 for deeper analysis
+    - If hypotheses are disproven → recommend reframing in Phase 0
+    - If confidence is sufficient → proceed to Phase 3
+    
+    Be explicit about confidence levels and what would increase confidence.
+  expected_output: >
+    A Synthesis & Pushback Report with executive summary, hypothesis validation matrix, refined
+    problem framing, shortlist of strategic options (2-4), explicit trade-offs, critical unknowns,
+    framework analyses, and gate decision (proceed/loop back/reframe). Include clear confidence
+    assessments. Formatted as professional markdown.
+  agent: strategic_framework_agent
+  context: [phase_1_research_intelligence_task, phase_1_data_analysis_task, phase_1_interview_synthesis_task]
+
+phase_2_quality_gate_task:
+  description: >
+    Conduct quality gate review of Phase 2 synthesis and decide whether to proceed, loop back,
+    or reframe the engagement.
+    
+    This is Phase 2 - Quality Gate. You are the final arbiter of whether the engagement has
+    sufficient rigor to proceed.
+    
+    You must evaluate:
+    1. Evidence Quality: Is the evidence sufficient, credible, and comprehensive?
+    2. Hypothesis Validation: Are hypotheses properly tested with clear support/weakening evidence?
+    3. Problem Clarity: Is the problem framing clear and actionable?
+    4. Option Viability: Are strategic options well-defined with clear trade-offs?
+    5. Confidence Level: Do we have enough confidence to make recommendations?
+    
+    Ask the hard questions:
+    - Would this analysis survive a hostile board review?
+    - What assumptions could kill these recommendations?
+    - What happens if key assumptions are wrong?
+    - Are there critical gaps that need filling before proceeding?
+    
+    DECISION FRAMEWORK:
+    - PROCEED to Phase 3: Evidence is strong, hypotheses validated, confidence is high
+    - LOOP BACK to Phase 1: Evidence is weak, need deeper analysis on specific hypotheses
+    - REFRAME in Phase 0: Hypotheses were wrong, need new problem framing
+    
+    Check company documents to ensure alignment with organizational reality. Use web search to
+    validate assumptions against market realities and find counter-examples.
+    
+    Be ruthless. Weak work should not proceed. Explicitly state what needs to happen before
+    proceeding (if looping back or reframing).
+  expected_output: >
+    A Quality Gate Decision Document with evidence quality assessment, hypothesis validation review,
+    confidence assessment, explicit decision (PROCEED/LOOP BACK/REFRAME), and if looping back or
+    reframing, specific requirements for what must be addressed. Formatted as professional markdown.
+  agent: quality_control_agent
+  context: [phase_2_synthesis_pushback_task]
+
+# ============================================================================
+# PHASE 3: STRATEGY DESIGN & OPTION TESTING
+# ============================================================================
+
+phase_3_strategy_design_task:
+  description: >
+    Design strategic options and conduct option testing for {client_company} regarding
+    {strategic_objective} in the {target_market} market.
+    
+    This is Phase 3 - Strategy Design & Option Testing. Work with the shortlist of options
+    from Phase 2 (2-4 options maximum).
+    
+    For EACH strategic option, you must develop:
+    1. Option Description: Clear articulation of what this option entails
+    2. Financial Impact: Revenue, cost, profitability, ROI projections (3-5 year)
+    3. Execution Complexity: Resource requirements, timeline, organizational changes needed
+    4. Risk Profile: Key risks, probability, impact, mitigation strategies
+    5. Organizational Readiness: Capability gaps, change management requirements
+    6. Strategic Rationale: Why this option addresses the validated hypotheses
+    
+    Strategic options should include:
+    - Build (organic growth, internal development)
+    - Buy (acquisition, M&A)
+    - Partner (alliances, joint ventures)
+    - Hybrid approaches
+    
+    Apply strategic frameworks:
+    - Option evaluation matrix
+    - Risk-return analysis
+    - Capability-opportunity fit
+    - Implementation feasibility assessment
+    
+    Start with company knowledge base documents to ensure options align with company values and
+    capabilities. When validating options against market realities or finding precedent
+    implementations, use web search to ensure options are grounded in proven practices.
+    
+    Ensure options are actionable, data-driven, financially sound, and aligned with
+    {client_company}'s validated capabilities.
+  expected_output: >
+    A Strategy Design & Option Testing Report with executive summary, detailed option analysis
+    (2-4 options), financial impact analysis, execution complexity assessment, risk profiles,
+    organizational readiness evaluation, and strategic rationale. Include option comparison matrix.
+    Formatted as professional markdown suitable for board-level review.
+  agent: recommendation_engine_agent
+  context: [phase_2_quality_gate_task]
+
+phase_3_data_modeling_task:
+  description: >
+    Build detailed financial models and quantitative analysis to support option testing in Phase 3.
+    
+    This is Phase 3 - Supporting quantitative work for option testing.
+    
+    For EACH strategic option, develop:
+    - Financial models (3-5 year projections)
+    - Scenario analysis (base case, optimistic, pessimistic)
+    - Sensitivity analysis (key assumptions that drive outcomes)
+    - ROI and payback period calculations
+    - Risk-adjusted financial projections
+    - Benchmarking against industry standards
+    
+    Ensure all models:
+    - Are clearly documented with assumptions
+    - Are flexible for sensitivity analysis
+    - Link back to validated hypotheses
+    - Support option comparison
+    
+    Check company documents for internal financial context. Use web search for industry benchmarks
+    and comparable company financial metrics.
+  expected_output: >
+    A Financial Modeling & Option Analysis Report with detailed financial models for each option,
+    scenario analyses, sensitivity analyses, ROI calculations, and benchmarking. Include clear
+    documentation of assumptions and methodologies. Formatted as professional markdown with
+    supporting appendices.
+  agent: data_analysis_agent
+  context: [phase_3_strategy_design_task]
+
+# ============================================================================
+# PHASE 4: RECOMMENDATION PRESSURE-TEST (CRITICAL GATE)
+# ============================================================================
+
+phase_4_pressure_test_task:
+  description: >
+    Conduct rigorous pressure-testing of strategic recommendations for {client_company} regarding
+    {strategic_objective} in the {target_market} market.
+    
+    This is Phase 4 - Recommendation Pressure-Test. This is a CRITICAL QUALITY GATE before
+    final recommendations are delivered.
+    
+    You must pressure-test each recommended option against:
+    
+    1. Hostile Board Scenario:
+       - Would this survive aggressive questioning?
+       - What are the weakest points in the argument?
+       - What counter-arguments exist?
+    
+    2. Assumption Failure:
+       - What assumptions could kill this recommendation?
+       - What happens if key assumptions are wrong?
+       - How sensitive is the recommendation to assumption changes?
+    
+    3. Execution Risk:
+       - What happens if execution slips 6 months?
+       - What happens if key resources aren't available?
+       - What happens if market conditions change?
+    
+    4. Competitive Response:
+       - How might competitors react?
+       - What if competitive dynamics shift?
+       - Are there defensive moves needed?
+    
+    5. Organizational Reality:
+       - Can the organization actually execute this?
+       - What cultural barriers exist?
+       - What change management challenges?
+    
+    For each pressure point, provide:
+    - Risk assessment (probability, impact)
+    - Mitigation strategies
+    - Contingency plans
+    - Decision criteria for when to pivot
+    
+    Check company documents to ensure recommendations align with organizational reality. Use
+    web search to find precedent failures, counter-examples, and market realities that could
+    challenge recommendations.
+    
+    GATE CRITERIA:
+    - If recommendations fail pressure-test → send back to Phase 3 for refinement
+    - If recommendations pass but need strengthening → require specific improvements
+    - If recommendations pass → proceed to Phase 5
+    
+    Be ruthless. Weak recommendations should not reach the client.
+  expected_output: >
+    A Recommendation Pressure-Test Report with executive summary, pressure-test results for each
+    option, risk assessments, mitigation strategies, contingency plans, and gate decision
+    (PROCEED/REFINE). Include explicit statement of recommendation defensibility. Formatted as
+    professional markdown suitable for board-level scrutiny.
+  agent: quality_control_agent
+  context: [phase_3_strategy_design_task, phase_3_data_modeling_task]
+
+# ============================================================================
+# PHASE 5: NARRATIVE & DECISION PACKAGING
+# ============================================================================
+
+phase_5_document_production_task:
+  description: >
+    Create comprehensive, hypothesis-led consulting deliverables for {client_company}'s strategic
+    engagement regarding {strategic_objective}.
+    
+    This is Phase 5 - Narrative & Decision Packaging. The documents must be hypothesis-led and
+    evidence-backed.
+    
+    You must create:
+    
+    1. Executive Summary (Decision-First Approach):
+       - Start with the decision/recommendation
+       - Key evidence supporting the decision
+       - Hypothesis validation summary
+       - Critical assumptions and risks
+       - Next steps
+    
+    2. Detailed Strategic Report:
+       - Hypothesis-driven narrative (not just analysis)
+       - Evidence-backed recommendations
+       - Option comparison and rationale
+       - Implementation roadmap with phases, milestones, quick wins
+       - Financial impact analysis
+       - Risk assessment and mitigation
+       - Success metrics and KPIs
+    
+    3. Executive Presentation Deck Outline:
+       - Decision-first slide structure
+       - Hypothesis validation slides
+       - Evidence summary slides
+       - Recommendation slides
+       - Implementation roadmap slides
+       - Q&A preparation (anticipated questions and answers)
+    
+    4. Tailored Messaging:
+       - C-suite/Board version (strategic focus, decision-oriented)
+       - Operational teams version (implementation focus, detailed)
+    
+    5. Appendices:
+       - Supporting data and methodologies
+       - Detailed financial models
+       - Evidence documentation
+       - Hypothesis validation details
+    
+    CRITICAL: The narrative must follow this structure:
+    - Problem (validated hypotheses)
+    - Evidence (what we learned)
+    - Options (what we considered)
+    - Recommendation (what we recommend and why)
+    - Implementation (how to execute)
+    - Risks (what could go wrong)
+    
+    Prioritize company knowledge base documents for brand consistency. Use web search to verify
+    facts, find current market statistics for citations, and cite external sources to strengthen
+    credibility.
+    
+    Ensure all documents maintain professional consulting firm brand standards, are consistent
+    in messaging, and tell a clear, compelling, defensible story. Documents should be ready for
+    client presentation and action.
+  expected_output: >
+    Complete consulting deliverables package including Executive Summary (decision-first), Detailed
+    Strategic Report (hypothesis-led), Executive Presentation Deck outline, tailored messaging
+    versions, and comprehensive appendices. All formatted as professional markdown, ready for
+    conversion to slides or formatted documents. Maintain brand consistency throughout. The narrative
+    must be defensible and evidence-backed.
+  agent: document_production_agent
+  context: [phase_4_pressure_test_task]
